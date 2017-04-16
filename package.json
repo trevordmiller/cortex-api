@@ -1,0 +1,28 @@
+{
+  "name": "cortex-api",
+  "version": "0.1.0",
+  "description": "The API for Cortex",
+  "repository": "trevordmiller/cortex-api",
+  "license": "MIT",
+  "author": "Trevor D. Miller (https://trevordmiller.com)",
+  "private": true,
+  "scripts": {
+    "build": "babel src -d build",
+    "dev": "yarn build -- -w",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "mongodb": "^2.2.25"
+  },
+  "main": "build/index.js",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
