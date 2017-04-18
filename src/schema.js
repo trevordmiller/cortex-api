@@ -41,7 +41,9 @@ const queryType = new GraphQLObjectType({
   fields: () => ({
     todos: {
       type: new GraphQLList(TodoType),
-      resolve: () => todos,
+      resolve: () => new Promise((resolve, reject) => {
+        resolve(todos)
+      })
     },
   })
 })
