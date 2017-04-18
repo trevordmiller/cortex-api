@@ -7,4 +7,5 @@ const cors = microCors()
 export default cors(expressGraphql({
   schema,
   pretty: true,
+  graphiql: true,
 }))
