@@ -4,7 +4,7 @@ import schema from './schema'
 
 const cors = microCors()
 
-export default microCors(expressGraphql({
+export default cors(expressGraphql({
   schema,
   pretty: true,
 }))
