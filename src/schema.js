@@ -7,8 +7,8 @@ import {
   GraphQLSchema,
 } from 'graphql'
 
-const TodoType = new GraphQLObjectType({  
-  name: 'todo',
+const QuestionType = new GraphQLObjectType({  
+  name: 'question',
   fields: () => ({
     id: {
       type: GraphQLID,
@@ -16,33 +16,43 @@ const TodoType = new GraphQLObjectType({
     title: {
       type: GraphQLString,
     },
-    completed: {
-      type: GraphQLBoolean,
+    answer: {
+      type: GraphQLString,
     },
   })
 })
 
 // in-memory test data to be replaced by database
-const todos = [  
+const questions = [
   {
-    "id": 1,
-    "title": "Write in journal",
-    "completed": true,
+    id: 1,
+    title: 'What is the keyboard shortcut to open a new tab?',
+    answer: 'Command + T',
   },
   {
-    "id": 2,
-    "title": "Take out the garbage",
-    "completed": false,
+    id: 2,
+    title: 'What is the keyboard shortcut to close the current tab?',
+    answer: 'Command + W',
+  },
+  {
+    id: 3,
+    title: 'What is the keyboard shortcut to copy?',
+    answer: 'Command + C',
+  },
+  {
+    id: 4,
+    title: 'What is the keyboard shortcut to paste?',
+    answer: 'Command + V',
   },
 ]
 
 const queryType = new GraphQLObjectType({  
   name: 'Query',
   fields: () => ({
-    todos: {
-      type: new GraphQLList(TodoType),
+    questions: {
+      type: new GraphQLList(QuestionType),
       resolve: () => new Promise((resolve, reject) => {
-        resolve(todos)
+        resolve(questions)
       })
     },
   })
