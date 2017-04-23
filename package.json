@@ -10,7 +10,8 @@
   "scripts": {
     "build": "babel src -d build",
     "build:watch": "yarn build -- --watch",
-    "start": "PORT=5000 micro build/index.js",
+    "start": "node build/index.js",
+    "start:watch": "nodemon build/index.js",
     "prerelease": "yarn build",
     "release": "now"
   },
@@ -22,6 +23,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.4.0",
+    "nodemon": "^1.11.0",
     "now": "^4.11.1"
   },
   "dependencies": {

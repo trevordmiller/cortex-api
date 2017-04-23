@@ -11,6 +11,6 @@ CLUSTER_PASSWORD=password
 
 - Run `yarn` to install dependencies
 - Run `yarn build:watch` to compile `src` to `build`
-- Run `yarn start` to start the API server
+- Run `yarn start:watch` to run the API server
 - Submit a pull request to `master`
 - An admin merges your pull request into `master` and runs `yarn release` to release a new version to npm
