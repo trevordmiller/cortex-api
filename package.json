@@ -2,16 +2,22 @@
   "name": "cortex-api",
   "version": "0.1.0",
   "description": "The API for Cortex",
+  "private": true,
   "repository": "trevordmiller/cortex-api",
   "license": "MIT",
   "author": "Trevor D. Miller (https://trevordmiller.com)",
-  "private": true,
+  "main": "build/index.js",
   "scripts": {
     "build": "babel src -d build",
-    "dev": "yarn build -- -w",
+    "build:watch": "yarn build -- --watch",
     "start": "PORT=5000 micro build/index.js",
-    "predeploy": "yarn build",
-    "deploy": "now"
+    "prerelease": "yarn build",
+    "release": "now"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -25,11 +31,5 @@
     "micro": "^7.3.2",
     "micro-cors": "^0.0.4",
     "mongodb": "^2.2.25"
-  },
-  "main": "build/index.js",
-  "babel": {
-    "presets": [
-      "env"
-    ]
   }
 }
