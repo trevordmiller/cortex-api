@@ -1,3 +1,5 @@
+// @flow
+
 import {config as dotenvConfig} from 'dotenv'
 import {MongoClient} from 'mongodb'
 

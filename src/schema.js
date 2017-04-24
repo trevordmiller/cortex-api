@@ -1,3 +1,5 @@
+// @flow
+
 import {graphql, buildSchema} from 'graphql'
 
 const schema = buildSchema(`

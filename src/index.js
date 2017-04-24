@@ -1,3 +1,5 @@
+// @flow
+
 import micro from 'micro'
 import microCors from 'micro-cors'
 import expressGraphql from 'express-graphql'

@@ -12,17 +12,22 @@
     "build:watch": "yarn build -- --watch",
     "start": "node build/index.js",
     "start:watch": "nodemon build/index.js",
+    "typecheck": "flow",
+    "verify": "yarn build && yarn typecheck",
     "prerelease": "yarn build",
     "release": "now"
   },
   "babel": {
     "presets": [
-      "env"
+      "env",
+      "flow"
     ]
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.4.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.44.2",
     "nodemon": "^1.11.0",
     "now": "^4.11.1"
   },
