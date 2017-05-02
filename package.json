@@ -8,14 +8,13 @@
   "author": "Trevor D. Miller (https://trevordmiller.com)",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel src -d build",
-    "build:watch": "yarn build -- --watch",
-    "start": "node build/index.js",
-    "start:watch": "nodemon build/index.js",
+    "dev:build": "yarn build -- --watch",
+    "dev:server": "nodemon build/index.js",
+    "verify": "yarn typecheck && yarn build",
     "typecheck": "flow",
-    "verify": "yarn build && yarn typecheck",
-    "prerelease": "yarn build",
-    "release": "now"
+    "build": "babel src -d build",
+    "release": "git checkout master && git pull && now",
+    "start": "node build/index.js"
   },
   "babel": {
     "presets": [
