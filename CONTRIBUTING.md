@@ -8,7 +8,8 @@ CLUSTER_USERNAME=username
 CLUSTER_PASSWORD=password
 ```
 - Run `yarn` to install libraries
-- Run `yarn dev:build` and `yarn dev:server` to develop
+- Run `yarn dev` to develop
+- Run `yarn test:watch` to update tests
 - Submit a pull request to `master`
 - Continuous Integration runs `yarn verify` to ensure things are working as expected
-- An admin merges your pull request into `master` and runs `yarn release` to release a new version
+- An admin merges your pull request into `master` and releases a new version

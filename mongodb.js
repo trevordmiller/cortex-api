@@ -1,9 +1,6 @@
-// @flow
+require('dotenv').config()
 
-import {config as dotenvConfig} from 'dotenv'
-import {MongoClient} from 'mongodb'
-
-dotenvConfig()
+const {MongoClient} = require('mongodb')
 
 const {
   CLUSTER_NAME,

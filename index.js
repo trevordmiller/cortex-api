@@ -1,10 +1,8 @@
-// @flow
-
-import micro from 'micro'
-import microCors from 'micro-cors'
-import expressGraphql from 'express-graphql'
-import schema from './schema'
-import rootValue from './rootValue'
+const micro = require('micro')
+const microCors = require('micro-cors')
+const expressGraphql = require('express-graphql')
+const schema = require('./schema')
+const rootValue = require('./rootValue')
 
 const server = micro(microCors()(expressGraphql({
   schema,

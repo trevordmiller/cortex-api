@@ -1,32 +1,38 @@
 {
   "name": "cortex-api",
-  "version": "0.1.0",
-  "description": "The API for Cortex",
-  "private": true,
-  "repository": "trevordmiller/cortex-api",
-  "license": "MIT",
-  "author": "Trevor D. Miller (https://trevordmiller.com)",
   "main": "build/index.js",
   "scripts": {
-    "dev:build": "yarn build -- --watch",
-    "dev:server": "nodemon build/index.js",
-    "verify": "yarn typecheck && yarn build",
-    "typecheck": "flow",
-    "build": "babel src -d build",
-    "release": "git checkout master && git pull && now",
-    "start": "node build/index.js"
+    "dev": "nodemon index.js",
+    "test:watch": "yarn test -- --watch",
+    "verify": "yarn test && yarn lint",
+    "test": "jest .",
+    "lint": "eslint .",
+    "stage": "git checkout master && git pull && now",
+    "release": "now alias",
+    "start": "node index.js"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "flow"
-    ]
+  "jest": {
+    "testEnvironment": "node"
   },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "alias": "cortex-api",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.44.2",
+    "eslint": "^3.19.0",
+    "jest": "^19.0.2",
     "nodemon": "^1.11.0",
     "now": "^4.11.1"
   },

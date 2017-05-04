@@ -1,6 +1,4 @@
-// @flow
-
-import {graphql, buildSchema} from 'graphql'
+const {buildSchema} = require('graphql')
 
 const schema = buildSchema(`
   type Question {
@@ -14,4 +12,4 @@ const schema = buildSchema(`
   }
 `)
 
-export default schema
+module.exports = schema
