@@ -29,7 +29,9 @@
       "no-console": "off"
     }
   },
-  "alias": "cortex-api",
+  "now": {
+    "alias": "cortex-api"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "jest": "^19.0.2",
