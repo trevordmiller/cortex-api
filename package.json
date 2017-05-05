@@ -1,15 +1,15 @@
 {
   "name": "cortex-api",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon --exec micro",
     "test:watch": "yarn test -- --watch",
     "verify": "yarn test && yarn lint",
     "test": "jest .",
     "lint": "eslint .",
     "stage": "git checkout master && git pull && now",
     "release": "now alias",
-    "start": "node index.js"
+    "start": "micro"
   },
   "jest": {
     "testEnvironment": "node"

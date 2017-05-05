@@ -1,8 +1,8 @@
 const fetch = require('node-fetch')
 
-const url = 'http://localhost:5000'
+const url = 'http://localhost:3000'
 
-test('responds with hello world', async () => {
+test('query question titles', async () => {
 
   const query = `{
     questions {
@@ -21,5 +21,5 @@ test('responds with hello world', async () => {
 
   const json = await response.json()
 
-  expect(json.data.questions.length).toBe(4)
+  expect(json.data.questions[0].title).toBe('What are the known states of matter?')
 })
