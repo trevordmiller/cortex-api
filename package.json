@@ -33,7 +33,7 @@
     "alias": "cortex-api"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^4.18.2",
     "jest": "^19.0.2",
     "nodemon": "^1.11.0",
     "now": "^4.11.1"
